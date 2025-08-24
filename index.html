@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matplotlib: 2‑Day Beginner→Master Roadmap</title>
+    <style>
+        :root {
+            --bg: #0b1020;
+            --card: #111834;
+            --muted: #9fb3c8;
+            --text: #eaf2ff;
+            --accent: #7dd3fc;
+            --accent2: #a7f3d0;
+            --warn: #fca5a5;
+            --ok: #86efac;
+            --code: #0e1726;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial;
+            color: var(--text);
+            background: radial-gradient(1200px 600px at 30% -10%, #17203a, transparent), var(--bg);
+            line-height: 1.5;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(11, 16, 32, .8);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid #233056;
+            z-index: 9;
+        }
+
+        .wrap {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 16px 20px
+        }
+
+        h1 {
+            font-size: clamp(24px, 4vw, 34px);
+            margin: 8px 0 2px
+        }
+
+        .subtitle {
+            color: var(--muted);
+            font-size: .98rem
+        }
+
+        .card {
+            background: linear-gradient(180deg, #0e1630, #0b132a 70%);
+            border: 1px solid #1e2b57;
+            border-radius: 16px;
+            padding: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+            margin: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            border-radius: 12px;
+            border: 1px solid #233056
+        }
+
+
+        th,
+        td {
+            padding: 10px 12px;
+            text-align: left;
+            vertical-align: top
+        }
+
+        thead th {
+            background: #0c1836;
+            color: #cfe3ff;
+            position: sticky;
+            top: 64px;
+            z-index: 1
+        }
+
+        tbody tr:nth-child(odd) {
+            background: #0d1731
+        }
+
+        tbody tr:nth-child(even) {
+            background: #0a142b
+        }
+
+        tbody tr:hover {
+            background: #0f1d3d
+        }
+
+        .pill {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 999px;
+            font-size: .8rem;
+            border: 1px solid #2a3a6a;
+            background: #0a1430;
+            color: #bfe4ff
+        }
+
+        .k {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+            background: var(--code);
+            border: 1px solid #1f2a44;
+            padding: 0 .35rem;
+            border-radius: 6px
+        }
+
+        details {
+            border: 1px solid #223259;
+            border-radius: 12px;
+            padding: 10px 12px;
+            background: #0a142b
+        }
+
+        details>summary {
+            cursor: pointer;
+            user-select: none;
+            font-weight: 600
+        }
+
+        .badge {
+            font-size: .75rem;
+            border-radius: 999px;
+            padding: 2px 8px;
+            margin-left: 8px
+        }
+
+        .beg {
+            background: #0b2a1a;
+            color: #a7f3d0;
+            border: 1px solid #1a5c39
+        }
+
+        .warn {
+            background: #3a1010;
+            color: #fecaca;
+            border: 1px solid #6b2222
+        }
+
+        .ok {
+            background: #0b2a1a;
+            color: #bbf7d0;
+            border: 1px solid #1a5c39
+        }
+
+        .tip {
+            color: #a7f3d0
+        }
+
+        .section-title {
+            font-size: 1.2rem;
+            margin: 0 0 8px;
+            color: #cfe3ff
+        }
+
+        .small {
+            font-size: .92rem;
+            color: var(--muted)
+        }
+
+        .foot {
+            color: #9fb3c8;
+            font-size: .9rem
+        }
+
+        .mt8 {
+            margin-top: 8px
+        }
+
+        .mt16 {
+            margin-top: 16px
+        }
+
+        .mt24 {
+            margin-top: 24px
+        }
+
+        .codeblock {
+            background: var(--code);
+            border: 1px solid #1f2a44;
+            border-radius: 12px;
+            padding: 12px;
+            overflow: auto
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="wrap">
+            <h1>Matplotlib: 2‑Day Beginner → Master Roadmap <span class="badge beg">Beginner‑friendly</span></h1>
+            <div class="subtitle">A clear plan with topics, functions, and tiny tasks.</div>
+        </div>
+    </header>
+
+    <main class="wrap">
+        <section class="card">
+            <div class="section-title">How to use this roadmap</div>
+            <ul>
+                <li>Follow Day 1 then Day 2. Each block has <span class="pill">Topic</span>, <span
+                        class="pill">Why</span>, <span class="pill">Key Functions</span>, and a <span
+                        class="pill">Mini‑Task</span>.</li>
+                <li>Use the <span class="k">OO API</span> (Object‑Oriented) from the start: <span class="k">fig, ax =
+                        plt.subplots()</span>.</li>
+                <li>Practice with tiny arrays or a simple CSV so you focus on visuals, not data wrangling.</li>
+            </ul>
+        </section>
+
+        <div class="card">
+            <h2>Day 1 — Foundations & Core Plots</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th">Block</th>
+                        <th>Topic</th>
+                        <th>Why it matters</th>
+                        <th>Key functions (syntax)</th>
+                        <th>Mini‑task</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><strong>Setup & Basics</strong><br><span class="small">Pyplot vs OO API, Figure &
+                                Axes</span></td>
+                        <td>Everything in Matplotlib lives on an <span class="k">Axes</span>. OO gives full control.
+                        </td>
+                        <td>
+                            <div class="k">import matplotlib.pyplot as plt</div>
+                            <div class="k">fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(6,4))</div>
+                            <div class="k">ax.plot(x, y)</div>
+                        </td>
+                        <td>Create an empty figure and set a title.</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><strong>Line plots</strong> <span class="badge ok">most common</span></td>
+                        <td>Show trends over ordered x.</td>
+                        <td>
+                            <div class="k">ax.plot(x, y, linestyle='-', marker='o')</div>
+                            <div class="k">ax.set(title='Line', xlabel='x', ylabel='y')</div>
+                            <div class="k">ax.legend()</div>
+                        </td>
+                        <td>Plot two lines with labels & legend.</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><strong>Scatter plots</strong></td>
+                        <td>Relationship between two variables; density via alpha.</td>
+                        <td>
+                            <div class="k">ax.scatter(x, y, s=40, alpha=0.7)</div>
+                            <div class="k">ax.grid(True, linestyle=':')</div>
+                        </td>
+                        <td>Make a scatter and add grid & axis labels.</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td><strong>Bar charts</strong> (vertical & horizontal)</td>
+                        <td>Compare categories; horizontal for long labels.</td>
+                        <td>
+                            <div class="k">ax.bar(categories, values)</div>
+                            <div class="k">ax.barh(categories, values)</div>
+                            <div class="k">ax.set_ylim/ set_xlim</div>
+                        </td>
+                        <td>Build both bar and barh for the same data.</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td><strong>Histograms & Density</strong></td>
+                        <td>Distribution, outliers, skew.</td>
+                        <td>
+                            <div class="k">ax.hist(x, bins=20, density=True)</div>
+                            <div class="k">ax.stairs(h, edges)</div>
+                        </td>
+                        <td>Plot histogram with 10 vs 30 bins; compare.</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td><strong>Box / Violin plots</strong></td>
+                        <td>Summarize spread & outliers across groups.</td>
+                        <td>
+                            <div class="k">ax.boxplot(data)</div>
+                            <div class="k">ax.violinplot(data)</div>
+                        </td>
+                        <td>Show boxplot of 3 groups side‑by‑side.</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td><strong>Pie / Donut (use sparingly)</strong> <span class="badge warn">careful</span>
+                        </td>
+                        <td>Simple share at a glance; hard to compare many slices.</td>
+                        <td>
+                            <div class="k">ax.pie(values, labels=labels, autopct='%1.1f%%')</div>
+                            <div class="k"># Donut: add circle</div>
+                        </td>
+                        <td>Create a donut with 4 categories.</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td><strong>Annotations & Text</strong></td>
+                        <td>Call out key points; make plots readable.</td>
+                        <td>
+                            <div class="k">ax.annotate('note', xy=(x0,y0), xytext=(x1,y1), arrowprops={})</div>
+                            <div class="k">ax.text(0.5, 0.9, 'hello', transform=ax.transAxes)</div>
+                        </td>
+                        <td>Annotate the max point with an arrow.</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td><strong>Legends, Ticks, Spines</strong></td>
+                        <td>Professional polish.</td>
+                        <td>
+                            <div class="k">ax.legend(loc='best')</div>
+                            <div class="k">ax.set_xticks([...]); ax.set_xticklabels([...], rotation=45)</div>
+                            <div class="k">for s in ax.spines.values(): s.set_visible(True)</div>
+                        </td>
+                        <td>Rotate x‑tick labels; move legend outside.</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td><strong>Saving Figures</strong></td>
+                        <td>Share your work crisply for reports.</td>
+                        <td>
+                            <div class="k">fig.tight_layout()</div>
+                            <div class="k">fig.savefig('plot.png', dpi=300, bbox_inches='tight')</div>
+                        </td>
+                        <td>Export PNG and PDF at 300 DPI.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card">
+            <h2>Day 2 — Layouts, Scales, Images, Advanced</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Block</th>
+                        <th>Topic</th>
+                        <th>Why it matters</th>
+                        <th>Key functions (syntax)</th>
+                        <th>Mini‑task</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><strong>Subplots & Layouts</strong></td>
+                        <td>Show multiple views; avoid clutter.</td>
+                        <td>
+                            <div class="k">fig, axs = plt.subplots(2,2, figsize=(8,6), sharex=True)</div>
+                            <div class="k">fig.tight_layout(); fig.subplots_adjust()</div>
+                            <div class="k">plt.GridSpec(nrows, ncols)</div>
+                        </td>
+                        <td>Make a 2×2 dashboard of four plot types.</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><strong>Dual/Secondary Axes</strong></td>
+                        <td>Compare variables with different scales.</td>
+                        <td>
+                            <div class="k">ax2 = ax.twinx()</div>
+                            <div class="k">ax.secondary_xaxis('top', functions=(fwd, inv))</div>
+                        </td>
+                        <td>Plot temp (°C) and rain (mm) together.</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><strong>Scales & Limits</strong></td>
+                        <td>Reveal patterns with log/symlog.</td>
+                        <td>
+                            <div class="k">ax.set_xscale('log'); ax.set_yscale('symlog')</div>
+                            <div class="k">ax.set_xlim(a,b); ax.set_ylim(c,d)</div>
+                        </td>
+                        <td>Compare linear vs log y‑scale for the same data.</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td><strong>Colormaps & Colorbars</strong></td>
+                        <td>Encode magnitude with color; readable color choices.</td>
+                        <td>
+                            <div class="k">im = ax.imshow(img, cmap='viridis')</div>
+                            <div class="k">fig.colorbar(im, ax=ax)</div>
+                            <div class="k">plt.colormaps()</div>
+                        </td>
+                        <td>Heatmap with colorbar and title.</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td><strong>Images & Heatmaps</strong></td>
+                        <td>Work with 2D arrays and images.</td>
+                        <td>
+                            <div class="k">ax.imshow(A, aspect='auto', interpolation='nearest')</div>
+                            <div class="k">ax.pcolormesh(X, Y, Z)</div>
+                            <div class="k">ax.contour/contourf(X, Y, Z)</div>
+                        </td>
+                        <td>Plot imshow + contour overlay.</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td><strong>Error bars & Confidence</strong></td>
+                        <td>Show uncertainty honestly.</td>
+                        <td>
+                            <div class="k">ax.errorbar(x, y, yerr=err, fmt='o')</div>
+                            <div class="k">ax.fill_between(x, y1, y2, alpha=0.3)</div>
+                        </td>
+                        <td>Line + shaded 95% band.</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td><strong>Time Series & Dates</strong></td>
+                        <td>Pretty date ticks and formatting.</td>
+                        <td>
+                            <div class="k">import matplotlib.dates as mdates</div>
+                            <div class="k">ax.plot(dates, values)</div>
+                            <div class="k">ax.xaxis.set_major_formatter(mdates.DateFormatter('%b %Y'))</div>
+                            <div class="k">fig.autofmt_xdate()</div>
+                        </td>
+                        <td>Plot monthly data with rotated labels.</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td><strong>3D Basics</strong></td>
+                        <td>Surface/mesh for advanced visuals.</td>
+                        <td>
+                            <div class="k">from mpl_toolkits.mplot3d import Axes3D</div>
+                            <div class="k">ax = fig.add_subplot(111, projection='3d')</div>
+                            <div class="k">ax.plot_surface(X, Y, Z)</div>
+                        </td>
+                        <td>Make a simple 3D surface.</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td><strong>Styling & Themes</strong></td>
+                        <td>Consistent, beautiful plots.</td>
+                        <td>
+                            <div class="k">plt.style.available; plt.style.use('ggplot')</div>
+                            <div class="k">plt.rcParams['font.size']=12</div>
+                            <div class="k">fig.set_facecolor('#fff'); ax.set_facecolor('#f7f7f7')</div>
+                        </td>
+                        <td>Apply a style + custom font size.</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td><strong>Export like a Pro</strong></td>
+                        <td>Quality + reproducibility.</td>
+                        <td>
+                            <div class="k">fig.savefig('figure.svg')</div>
+                            <div class="k">fig.savefig('figure.png', dpi=300, transparent=True)</div>
+                            <div class="k">fig.set_dpi(150)</div>
+                        </td>
+                        <td>Save transparent PNG and an SVG.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <section class="card">
+            <h2>Master Function Cheat‑Sheet (with what they do)</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width:280px">Function</th>
+                        <th>What it does</th>
+                        <th>Quick syntax</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="k">plt.subplots</span></td>
+                        <td>Create figure and axes grid</td>
+                        <td class="k">fig, ax = plt.subplots(1,1, figsize=(6,4))</td>
+                    </tr>
+                    <tr>
+                        <td><span class="k">ax.plot</span></td>
+                        <td>Line plot</td>
+                        <td class="k">ax.plot(x, y, linestyle='--', marker='o')</td>
+                    </tr>
+                    <tr>
+                        <td><span class="k">ax.scatter</span></td>
+                        <td>Scatter plot</td>
+                        <td class="k">ax.scatter(x, y, s=40, alpha=.7)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="k">ax.bar / ax.barh</span></td>
+                        <td>Vertical / horizontal bars</td>
+                        <td class="k">ax.bar(cats, vals)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="k">ax.hist</span></td>
+                        <td>Histogram of distribution</td>
+                        <td class="k">ax.hist(x, bins=20, density=True)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="k">ax.boxplot / ax.violinplot</span></td>
+                        <td>Spread & outliers by group</td>
+                        <td class="k">ax.boxplot([a,b,c])</td>
+                    </tr>
+                    <tr>
+                        <td><span class="k">ax.pie</span></td>
+                        <td>Pie chart (use sparingly)</td>
+                        <td class="k">ax.pie(vals, labels=labels, autopct='%1.1f%%')</td>
+                    </tr>
+                    <tr>
+                        <td><span class="k">ax.errorbar</span></td>
+                        <td>Values with error bars</td>
+                        <td class="k">ax.errorbar(x,y,yerr=err,fmt='o')</td>
+                    </tr>
+                    <tr>
+                        <td><span class="k">ax.fill_between</span></td>
+                        <td>Shade region between curves</td>
+                        <td class="k">ax.fill_between(x, y1, y2, alpha=.3)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="k">ax.step / ax.stem</span></td>
+                        <td>Step or lollipop style</td>
+                        <td class="k">ax.step(x,y)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="k">ax.area / plt.stackplot</span></td>
+                        <td>Area & stacked area</td>
+                        <td class="k">plt.stackplot(x, y_list)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="k">ax.imshow</span></td>
+                        <td>Display image / 2D array</td>
+                        <td class="k">im=ax.imshow(A, cmap='magma')</td>
+                    </tr>
+                    <tr>
+                        <td><span class="k">ax.pcolormesh / ax.contour(f)</span></td>
+                        <td>Heatmap / contour lines</td>
+                        <td class="k">ax.contourf(X,Y,Z,levels=20)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="k">fig.colorbar</span></td>
+                        <td>Attach colorbar to mappable</td>
+                        <td class="k">fig.colorbar(im, ax=ax)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="k">ax.annotate / ax.text</span></td>
+                        <td>Notes and labels</td>
+                        <td class="k">ax.annotate('peak', xy=(...), xytext=(...))</td>
+                    </tr>
+                    <tr>
+                        <td><span class="k">ax.set / set_xlabel / set_ylabel</span></td>
+                        <td>Titles & axis labels</td>
+                        <td class="k">ax.set(title='T', xlabel='X', ylabel='Y')</td>
+                    </tr>
+                    <tr>
+                        <td><span class="k">ax.set_xlim / set_ylim</span></td>
+                        <td>Axis limits</td>
+                        <td class="k">ax.set_xlim(0,100)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="k">ax.set_xscale / set_yscale</span></td>
+                        <td>Log, symlog, etc.</td>
+                        <td class="k">ax.set_yscale('log')</td>
+                    </tr>
+                    <tr>
+                        <td><span class="k">ax.legend</span></td>
+                        <td>Legend for labeled artists</td>
+                        <td class="k">ax.legend(loc='best')</td>
+                    </tr>
+                    <tr>
+                        <td><span class="k">ax.grid</span></td>
+                        <td>Grid lines</td>
+                        <td class="k">ax.grid(True, linestyle=':')</td>
+                    </tr>
+                    <tr>
+                        <td><span class="k">ax.twinx / secondary_xaxis</span></td>
+                        <td>Secondary axes</td>
+                        <td class="k">ax2 = ax.twinx()</td>
+                    </tr>
+                    <tr>
+                        <td><span class="k">plt.style.use</span></td>
+                        <td>Apply style theme</td>
+                        <td class="k">plt.style.use('seaborn-v0_8')</td>
+                    </tr>
+                    <tr>
+                        <td><span class="k">plt.rcParams[...]</span></td>
+                        <td>Global defaults</td>
+                        <td class="k">plt.rcParams['axes.titlesize']=14</td>
+                    </tr>
+                    <tr>
+                        <td><span class="k">fig.tight_layout / constrained_layout</span></td>
+                        <td>Auto layout</td>
+                        <td class="k">fig.tight_layout()</td>
+                    </tr>
+                    <tr>
+                        <td><span class="k">fig.savefig</span></td>
+                        <td>Export figures</td>
+                        <td class="k">fig.savefig('out.png', dpi=300)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <details class="mt16">
+                <summary>Nice‑to‑Know Extras</summary>
+                <ul>
+                    <li><span class="k">inset_axes</span> (from <span
+                            class="k">mpl_toolkits.axes_grid1.inset_locator</span>) for zoomed inset plots.</li>
+                    <li><span class="k">broken_barh</span> for Gantt‑like timelines.</li>
+                    <li><span class="k">axhline / axvline / axhspan / axvspan</span> to mark thresholds/regions.</li>
+                    <li><span class="k">FuncAnimation</span> for simple animations/GIFs.</li>
+                    <li><span class="k">Path / Patches</span> for custom shapes (arrows, boxes).</li>
+                </ul>
+            </details>
+        </section>
+
+        <section class="grid two">
+            <div class="card">
+                <h2>Beginner‑Friendly Templates</h2>
+                <div class="section-title">Line + Scatter</div>
+                <div class="codeblock">
+                    <pre>import matplotlib.pyplot as plt
+fig, ax = plt.subplots(figsize=(6,4))
+ax.plot(x, y, label='Line', marker='o')
+ax.scatter(x, y2, label='Scatter', alpha=0.7)
+ax.set(title='My Plot', xlabel='X', ylabel='Y')
+ax.legend(); ax.grid(True, linestyle=':')
+fig.tight_layout(); fig.savefig('plot.png', dpi=300)</pre>
+                </div>
+
+                <div class="section-title mt16">Heatmap + Colorbar</div>
+                <div class="codeblock">
+                    <pre>im = ax.imshow(A, cmap='viridis', aspect='auto')
+fig.colorbar(im, ax=ax); ax.set(title='Heatmap')</pre>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Mini Projects (end of each day)</h2>
+                <ol>
+                    <li><strong>Day 1 Dashboard:</strong> 2×2 subplots: line, scatter, bar, histogram. Add titles,
+                        legend, grid, and export PNG.</li>
+                    <li><strong>Day 2 Story:</strong> Heatmap with colorbar, a line plot with shaded CI, and a
+                        date‑xaxis plot. Save transparent PNG + SVG.</li>
+                </ol>
+                <p class="tip">Tip: Keep code blocks short and readable. Prefer <span class="k">ax = axs[r, c]</span>
+                    naming for multi‑plot grids.</p>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Common Mistakes & Fixes</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Mistake</th>
+                        <th>Fix</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Using only <span class="k">plt.plot</span> everywhere</td>
+                        <td>Switch to OO: <span class="k">fig, ax = plt.subplots()</span> then <span
+                                class="k">ax.plot(...)</span></td>
+                    </tr>
+                    <tr>
+                        <td>Overlapping labels/legends</td>
+                        <td><span class="k">fig.tight_layout()</span> or <span class="k">bbox_inches='tight'</span> on
+                            save; reduce text size.</td>
+                    </tr>
+                    <tr>
+                        <td>Unreadable colors</td>
+                        <td>Use perceptually uniform colormaps: <span class="k">'viridis', 'magma', 'cividis'</span>.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Too many slices in pie charts</td>
+                        <td>Use bar chart or small multiples instead.</td>
+                    </tr>
+                    <tr>
+                        <td>Axis scales hide structure</td>
+                        <td>Try <span class="k">ax.set_yscale('log')</span> for skewed data.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="card">
+            <h2>Practice Plan (2 Days)</h2>
+            <ol>
+                <li>Re‑type each example; don’t copy‑paste. Change one parameter and observe.</li>
+                <li>Create a 2×2 dashboard twice: first with random data, then with a small CSV.</li>
+                <li>Finish Day‑2 by rebuilding the same plots using different styles and colormaps.</li>
+            </ol>
+        </section>
+    </main>
+</body>
+
+</html>
