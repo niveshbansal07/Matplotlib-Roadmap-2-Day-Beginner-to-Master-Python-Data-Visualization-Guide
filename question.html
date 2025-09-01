@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Matplotlib 20 Questions – Beginner to Pro</title>
+
+    <link rel="icon" type="image/png" href="image/favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Table */
+        .card {
+            background: linear-gradient(180deg, #0e1630, #0b132a 70%);
+            border: 1px solid #1e2b57;
+            border-radius: 16px;
+            padding: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+            margin: 20px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            border-radius: 12px;
+            border: 1px solid #233056;
+            overflow: hidden;
+        }
+
+        th,
+        td {
+            padding: 10px 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        thead th {
+            background: #0c1836;
+            color: #cfe3ff;
+            top: 64px;
+            z-index: 1;
+        }
+
+        tbody tr:nth-child(odd) {
+            background: #0d1731
+        }
+
+        tbody tr:nth-child(even) {
+            background: #0a142b
+        }
+
+        tbody tr:hover {
+            background: #0f1d3d
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header>
+        <div class="wrap">
+            <h1>Matplotlib: 2‑Day Beginner → Master Roadmap <span class="badge beg">Beginner‑friendly</span></h1>
+            <div class="subtitles">
+                <div class="subtitle">
+                    💻Source Code:
+                </div>
+                <div class="subtitle"><a
+                        href="https://niveshbansal07.github.io/Matplotlib-Roadmap-2-Day-Beginner-to-Master-Python-Data-Visualization-Guide/"
+                        target="_blank" class="source-code">Concepts</a>
+                </div>
+                <div class="subtitle"><a
+                        href="https://github.com/niveshbansal07/Matplotlib-Beginner-to-Master-Python-Data-Visualization-Source-Code"
+                        target="_blank" class="source-code">Concepts Repo</a>
+                </div>
+                <div class="subtitle"><a
+                        href="https://github.com/niveshbansal07/Matplotlib-20-Questions-Beginner-to-Master"
+                        target="_blank" class="source-code">Questions Repo</a>
+                </div>
+            </div>
+        </div>
+        <div class="me">
+            <a href="https://github.com/niveshbansal07" target="_blank"><img src="image/me.jpg" alt="Nivesh Bansal"
+                    class="me-img"></a>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <div class="wrap">
+        <h1>📊 Top 20 Matplotlib Mastery Questions</h1>
+        <p class="subtitle">From Beginner to Pro – Practical Visualization Challenges</p>
+
+        <div class="card">
+            <table>
+                <thead>
+                    <tr>
+                        <th>S.No</th>
+                        <th>Category</th>
+                        <th>Challenge</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Basic & Essential</td>
+                        <td>Dynamic Scaling: Plot <code>y = sin(x)</code> from 0–2π, auto-rescale with new data.</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Basic & Essential</td>
+                        <td>Custom Style Sheet: Create <code>.mplstyle</code> file to set global defaults.</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Basic & Essential</td>
+                        <td>Data Transformation: Plot <code>log(y)</code> vs <code>x</code> but ticks in original
+                            values.</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Customization & Polish</td>
+                        <td>Annotated Events: Plot stock prices, annotate highest/lowest points.</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Customization & Polish</td>
+                        <td>Dual Axes: Temperature (°C) + Humidity (%) with shared time axis.</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Customization & Polish</td>
+                        <td>Custom Ticks: Show only quarterly months (Jan, Apr, Jul, Oct).</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Customization & Polish</td>
+                        <td>Gradient Color Line: Sine wave with color changing from blue → red.</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Customization & Polish</td>
+                        <td>Custom Legends: Legend with unique marker size, color, and style.</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Subplots & Layouts</td>
+                        <td>Complex Layout: 5 plots (2 top row, 3 bottom row) with unique titles.</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Subplots & Layouts</td>
+                        <td>Shared Axes Zoom: Zooming in one subplot updates another subplot.</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>Real-Time & Animation</td>
+                        <td>Live Data Simulation: Random walk updating every 200ms.</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>Real-Time & Animation</td>
+                        <td>Animated Transition: Animate smoothly from <code>sin(x)</code> → <code>cos(x)</code>.</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>Real-Time & Animation</td>
+                        <td>Performance Challenge: Plot 1M points efficiently with zooming.</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>Advanced Visualization</td>
+                        <td>Heatmap: 10×10 matrix with annotated cell values.</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>Advanced Visualization</td>
+                        <td>3D Plot: Parametric spiral (<code>cos(t), sin(t), t</code>) with gradient colors.</td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>Advanced Visualization</td>
+                        <td>Custom Colormap: Red → Yellow → Green for a contour plot.</td>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td>Interactivity & Widgets</td>
+                        <td>Interactive Slider: Control sine wave frequency in real-time.</td>
+                    </tr>
+                    <tr>
+                        <td>18</td>
+                        <td>Interactivity & Widgets</td>
+                        <td>Clickable Points: Scatter plot shows coordinates when clicked.</td>
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td>Integration & Export</td>
+                        <td>High-Quality Export: Multi-plot figure → 300 DPI PDF with metadata.</td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td>Integration & Export</td>
+                        <td>Embedding in GUI: Matplotlib plot inside Tkinter with refresh button.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
