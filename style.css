@@ -43,16 +43,15 @@
             margin: 8px 0 2px
         }
 
-        .subtitles{
+        .subtitles {
             width: 40vw;
             display: flex;
             justify-content: space-between
-            
         }
+
         .subtitle {
             color: var(--muted);
             font-size: .98rem
-            
         }
 
         .me-img {
@@ -82,4 +81,79 @@
 
         .source-code:hover {
             text-decoration: none;
+        }
+
+        /* 📱 Responsive Design */
+        @media (max-width: 992px) {
+            .subtitles {
+                width: 100%;
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+
+            .me-img {
+                width: 60px;
+                margin: 10px;
+                margin-right: 40px;
+            }
+
+            table th,
+            table td {
+                padding: 8px;
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .me-img {
+                margin: 10px auto;
+                float: none;
+                display: block;
+            }
+
+            .subtitles {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .subtitle {
+                font-size: 0.9rem;
+            }
+
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 20px;
+            }
+
+            .badge {
+                font-size: 0.65rem;
+                padding: 1px 6px;
+            }
+
+            .subtitle {
+                font-size: 0.85rem;
+            }
+
+            .me-img {
+                width: 50px;
+            }
+
+            table th,
+            table td {
+                padding: 6px;
+                font-size: 0.85rem;
+            }
         }
