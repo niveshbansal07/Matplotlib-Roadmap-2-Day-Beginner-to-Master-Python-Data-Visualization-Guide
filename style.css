@@ -83,6 +83,126 @@
             text-decoration: none;
         }
 
+        .card {
+            background: linear-gradient(180deg, #0e1630, #0b132a 70%);
+            border: 1px solid #1e2b57;
+            border-radius: 16px;
+            padding: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+            margin: 20px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            border-radius: 12px;
+            border: 1px solid #233056;
+            overflow: hidden;
+        }
+
+                th,
+        td {
+            padding: 10px 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        thead th {
+            background: #0c1836;
+            color: #cfe3ff;
+            top: 64px;
+            z-index: 1;
+        }
+
+        tbody tr:nth-child(odd) {
+            background: #0d1731
+        }
+
+        tbody tr:nth-child(even) {
+            background: #0a142b
+        }
+
+        tbody tr:hover {
+            background: #0f1d3d
+        }
+
+
+
+                .pill {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 999px;
+            font-size: .8rem;
+            border: 1px solid #2a3a6a;
+            background: #0a1430;
+            color: #bfe4ff
+        }
+
+        .k {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+            background: var(--code);
+            border: 1px solid #1f2a44;
+            padding: 0 .35rem;
+            border-radius: 6px
+        }
+
+        .warn {
+            background: #3a1010;
+            color: #fecaca;
+            border: 1px solid #6b2222
+        }
+
+        .ok {
+            background: #0b2a1a;
+            color: #bbf7d0;
+            border: 1px solid #1a5c39
+        }
+
+        .tip {
+            color: #a7f3d0
+        }
+
+        .section-title {
+            font-size: 1.2rem;
+            margin: 0 0 8px;
+            color: #cfe3ff
+        }
+
+        .small {
+            font-size: .92rem;
+            color: var(--muted)
+        }
+
+        .foot {
+            color: #9fb3c8;
+            font-size: .9rem
+        }
+
+        .mt8 {
+            margin-top: 8px
+        }
+
+        .mt16 {
+            margin-top: 16px
+        }
+
+        .mt24 {
+            margin-top: 24px
+        }
+
+        .codeblock {
+            background: var(--code);
+            border: 1px solid #1f2a44;
+            border-radius: 12px;
+            padding: 12px;
+            overflow: auto
+        }
+
+        
+
+
+        
         /* 📱 Responsive Design */
         @media (max-width: 992px) {
             .subtitles {
